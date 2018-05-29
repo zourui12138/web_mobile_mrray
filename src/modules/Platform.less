@@ -1,0 +1,58 @@
+@baseFontSize: 75;// 基于iphone6
+.px2rem(@name, @px) {
+        @{name}: @px / @baseFontSize * 1rem;
+}
+#platform{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:100%;
+    #header{
+        .px2rem(padding-left,42);
+        .px2rem(padding-right,42);
+        .px2rem(height,88);
+        display: flex;
+        background-color: #fff;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid #d7d7d7;
+        .px2rem(border-width,1);
+        img{
+            .px2rem(width,227);
+        }
+    }
+    #main{
+        flex:1;
+        width:100%;
+        overflow:auto;/* winphone8和android4+ */
+        -webkit-overflow-scrolling: touch; /* ios5+ */
+        #footer{
+            background-color: #333;
+            .px2rem(padding-top,75);
+            color: #fff;
+            div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .px2rem(padding-left,42);
+                .px2rem(padding-right,42);
+                img{
+                    .px2rem(width,156);
+                }
+                ul{
+                    li{
+                        .px2rem(font-size,18);
+                        .px2rem(line-height,36);
+                        text-align: justify;
+                    }
+                }
+            }
+            h1{
+                .px2rem(height,90);
+                .px2rem(line-height,90);
+                .px2rem(font-size,18);
+                text-align: center;
+            }
+        }
+    }
+}
