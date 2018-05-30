@@ -1,8 +1,5 @@
-@imgUrl: "../../assets/img/home/";
-@baseFontSize: 75;// 基于iphone6
-.px2rem(@name, @px) {
-        @{name}: @px / @baseFontSize * 1rem;
-}
+@import "../../assets/css/compatibility";
+@imgUrl: '../../assets/img/home/';
 .title{
     .px2rem(font-size,30);
     .px2rem(height,100);
@@ -10,7 +7,7 @@
     text-align: center;
 }
 .subTitle{
-    display: flex;
+    .flex;
     text-align: justify;
     .px2rem(line-height,36);
     .px2rem(font-size,18);
@@ -22,11 +19,10 @@
         background: url('@{imgUrl}banner.png') no-repeat center;
         background-size: 100%;
         color: #fff;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
+        .flex;
+        .flex-direction(column);
+        .justify-content(center);
+        .align-items(center);
         p{
             .px2rem(font-size,36);
             .px2rem(height,60);
@@ -54,9 +50,9 @@
             .px2rem(padding-right,45);
             .px2rem(height,264);
             .px2rem(margin-top,30);
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            .flex;
+            .justify-content(space-around);
+            .align-items(center);
             div{
                 .px2rem(width,290);
                 text-align: center;
@@ -88,9 +84,9 @@
             text-align: center;
         }
         section{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            .flex;
+            .justify-content(space-between);
+            .align-items(center);
             .px2rem(padding-left,42);
             .px2rem(padding-right,42);
             p{
@@ -146,8 +142,8 @@
             .subTitle;
         }
         ul{
-            display: flex;
-            justify-content: space-between;
+            .flex;
+            .justify-content(space-between);
             .px2rem(margin-top,30);
             li{
                 img{
@@ -174,8 +170,8 @@
             .subTitle;
         }
         ul{
-            display: flex;
-            justify-content: space-between;
+            .flex;
+            .justify-content(space-between);
             .px2rem(margin-top,30);
             li{
                 img{

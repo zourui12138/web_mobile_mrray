@@ -1,0 +1,75 @@
+@baseFontSize: 75;// 基于iphone6
+.px2rem(@name, @px) {
+        @{name}: @px / @baseFontSize * 1rem;
+}
+.flex{
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-direction(@arg)when(@arg = column){
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction:column;
+    -webkit-flex-direction:column;
+}
+.flex-direction(@arg)when(@arg = column-reverse){
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:reverse;
+    -moz-box-orient:vertical;
+    -moz-box-direction:reverse;
+    flex-direction:column-reverse;
+    -webkit-flex-direction:column-reverse;
+}
+.flex-direction(@arg)when(@arg = row){
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -moz-box-orient:horizontal;
+    -moz-box-direction:normal;
+    flex-direction:row;
+    -webkit-flex-direction:row;
+}
+.flex-direction(@arg)when(@arg = row-reverse){
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:reverse;
+    -moz-box-orient:horizontal;
+    -moz-box-direction:reverse;
+    flex-direction:row-reverse;
+    -webkit-flex-direction:row-reverse;
+}
+.justify-content(@arg){
+    -webkit-justify-content:@arg;
+    justify-content:@arg;
+    -moz-box-pack:@arg;
+    -webkit--moz-box-pack:@arg;
+    box-pack:@arg;
+}
+.align-items(@arg){
+    align-items:@arg;
+    -webkit-align-items:@arg;
+    box-align:@arg;
+    -moz-box-align:@arg;
+    -webkit-box-align:@arg;
+}
+.align-self(@arg){
+    align-self:@arg;
+    -webkit-align-self:@arg;
+}
+.flexNum(@num){
+    box-flex:@num;
+    -webkit-box-flex:@num;
+    -moz-box-flex:@num;
+    flex:@num;
+    -webkit-flex:@num;
+}
+.order(@num){
+    box-order:@num;
+    -webkit-box-order:@num;
+    -moz-box-order:@num;
+    order:@num;
+    -webkit-order:@num;
+}
