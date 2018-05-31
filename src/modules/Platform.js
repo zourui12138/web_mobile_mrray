@@ -3,6 +3,7 @@ import './Platform.less'
 
 // 图片
 import Logo from '../assets/img/logo.png'
+import BreadCrumbs from '../assets/img/breadCrumbs.png'
 import QrCode from '../assets/img/QrCode.png'
 
 class Platform extends Component {
@@ -19,8 +20,8 @@ class Platform extends Component {
         return (
             <div id="platform">
                 <header id="header">
-                    <img src={Logo} alt=""/>
-                    <img src={Logo} alt=""/>
+                    <img className="logo" src={Logo} alt=""/>
+                    <img className="breadCrumbs" src={BreadCrumbs} alt=""/>
                 </header>
                 <div id="main">
                     {this.props.children}

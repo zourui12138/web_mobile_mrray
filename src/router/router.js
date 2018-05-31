@@ -3,6 +3,11 @@ import { Router, Route, browserHistory, Redirect } from 'react-router';
 
 import Platform from "../modules/Platform";
 import Home from "../modules/home/Home";
+import Baas from "../modules/products/Baas";
+import Watermark from "../modules/products/Watermark";
+import Sensitive from "../modules/products/Sensitive";
+import News from "../modules/news/News";
+import About from "../modules/about/About";
 
 export default class MyRouter extends Component {
     constructor(props) {
@@ -24,6 +29,11 @@ export default class MyRouter extends Component {
                 <Redirect from="/" to="/home" />
                 <Route path="/" component={Platform}>
                     <Route path="/home" component={Home}/>
+                    <Route path="/baas" component={Baas}/>
+                    <Route path="/watermark" component={Watermark}/>
+                    <Route path="/sensitive" component={Sensitive}/>
+                    <Route path="/news" component={News}/>
+                    <Route path="/about" component={About}/>
                 </Route>
             </Router>
         );

@@ -9,6 +9,7 @@ import solution_icon_1 from '../../assets/img/home/solution_icon_1.png'
 import partner1 from '../../assets/img/home/partner1.png'
 import partner2 from '../../assets/img/home/partner2.png'
 import partner3 from '../../assets/img/home/partner3.png'
+import arrow_left from '../../assets/img/home/arrow_left.png'
 
 class Home extends Component {
     render() {
@@ -120,6 +121,13 @@ class Home extends Component {
                         <li><img src={partner1} alt=""/></li>
                         <li><img src={partner2} alt=""/></li>
                         <li><img src={partner3} alt=""/></li>
+                    </ul>
+                </div>
+                <div className="nav">
+                    <ul>
+                        <li><span>产品服务</span><img src={arrow_left} alt=""/></li>
+                        <li><span>新闻资讯</span><img src={arrow_left} alt=""/></li>
+                        <li><span>关于我们</span><img src={arrow_left} alt=""/></li>
                     </ul>
                 </div>
             </div>
