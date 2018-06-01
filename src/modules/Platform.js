@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { browserHistory } from 'react-router'
 import './Platform.less'
 
 // 图片
@@ -10,18 +11,49 @@ class Platform extends Component {
     constructor(props){
         super(props);
         this.state = {
-            date: new Date()
+            navShow: false,
+            navProductShow: false
         };
     }
-    componentDidMount() {
-        console.log(this.state.date);
+    href(arg){
+        browserHistory.push(arg);
+        this.setState({navShow : false});
+        this.setState({navProductShow : false});
+    }
+    toggleNavShow() {
+        this.setState({navShow : !this.state.navShow});
+        this.setState({navProductShow : false});
+    }
+    toggleNavProductShow() {
+        this.setState({navProductShow : !this.state.navProductShow});
     }
     render() {
         return (
             <div id="platform">
                 <header id="header">
                     <img className="logo" src={Logo} alt=""/>
-                    <img className="breadCrumbs" src={BreadCrumbs} alt=""/>
+                    <img className="breadCrumbs" src={BreadCrumbs} alt="" onClick={() => this.toggleNavShow()}/>
+                    {
+                        this.state.navShow &&
+                        <div>
+                            <ul>
+                                <li><h3 onClick={() => this.href('/home')}>首页</h3></li>
+                                <li>
+                                    <h3 onClick={() => this.toggleNavProductShow()}>产品服务</h3>
+                                    {
+                                        this.state.navProductShow &&
+                                        <ol>
+                                            <li><h4 onClick={() => this.href('/baas')}>迅鳐RayBaas平台</h4></li>
+                                            <li><h4 onClick={() => this.href('/sensitive')}>敏感数据与免泄露系统</h4></li>
+                                            <li><h4 onClick={() => this.href('/watermark')}>数字水印系统</h4></li>
+                                        </ol>
+                                    }
+                                </li>
+                                <li><h3 onClick={() => this.href('/news')}>新闻资讯</h3></li>
+                                <li><h3 onClick={() => this.href('/about')}>关于我们</h3></li>
+                            </ul>
+                        </div>
+                    }
                 </header>
                 <div id="main">
                     {this.props.children}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { browserHistory } from 'react-router'
 import './Home.less'
 
 // 图片
@@ -12,6 +13,18 @@ import partner3 from '../../assets/img/home/partner3.png'
 import arrow_left from '../../assets/img/home/arrow_left.png'
 
 class Home extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            navProductShow: false
+        };
+    }
+    href(arg){
+        browserHistory.push(arg);
+    }
+    toggleNavProductShow() {
+        this.setState({navProductShow : !this.state.navProductShow});
+    }
     render() {
         return (
             <div id="home">
@@ -125,9 +138,19 @@ class Home extends Component {
                 </div>
                 <div className="nav">
                     <ul>
-                        <li><span>产品服务</span><img src={arrow_left} alt=""/></li>
-                        <li><span>新闻资讯</span><img src={arrow_left} alt=""/></li>
-                        <li><span>关于我们</span><img src={arrow_left} alt=""/></li>
+                        <li>
+                            <h2 onClick={() => this.toggleNavProductShow()}><span>产品服务</span><img src={arrow_left} alt=""/></h2>
+                            {
+                                this.state.navProductShow &&
+                                <div>
+                                    <h3 onClick={() => this.href('/baas')}>迅鳐RayBaas平台</h3>
+                                    <h3 onClick={() => this.href('/sensitive')}>敏感数据与免泄露系统</h3>
+                                    <h3 onClick={() => this.href('/watermark')}>数字水印系统</h3>
+                                </div>
+                            }
+                        </li>
+                        <li><h2 onClick={() => this.href('/news')}><span>新闻资讯</span><img src={arrow_left} alt=""/></h2></li>
+                        <li><h2 onClick={() => this.href('/about')}><span>关于我们</span><img src={arrow_left} alt=""/></h2></li>
                     </ul>
                 </div>
             </div>

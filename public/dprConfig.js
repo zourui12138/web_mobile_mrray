@@ -15,9 +15,3 @@ metaEl.setAttribute('content',
 docEl.setAttribute('data-dpr', dpr);
 // 动态写入样式
 docEl.setAttribute('style','font-size:'+ rem +'px');
-// 给js调用的，某一dpr下rem和px之间的转换函数
-window.rem2px = (v) => parseFloat(v) * rem;
-window.px2rem = (v) => parseFloat(v) / rem;
-
-window.dpr = dpr;
-window.rem = rem;
